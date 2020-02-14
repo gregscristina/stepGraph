@@ -4,7 +4,7 @@
 #'
 #' @title Stepwise Gaussian Graphical Model
 #'
-#' @description \code{StepGraph} computes the output for the stepwise gaussian graphical algorithm.
+#' @description \code{stepGraph} computes the output for the stepwise gaussian graphical algorithm.
 #'
 #' @param x Data matrix (of size n x p).
 #' @param alpha_f Forward threshold.
@@ -24,7 +24,7 @@
 #' @author Anthony-Alexander Christidis, \email{anthony.christidis@stat.ubc.ca}
 #'
 #'
-StepGraph = function(x, alpha_f, alpha_b, nei.max){
+stepGraph = function(x, alpha_f, alpha_b, nei.max){
 
   #Initialization
 

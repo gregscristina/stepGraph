@@ -1,4 +1,4 @@
-Package: StepGraph
+Package: stepGraph
 Type: Package
 Title: Implementation of Stepwise Gaussian Graphical Algorithm
 Version: 1.0.0

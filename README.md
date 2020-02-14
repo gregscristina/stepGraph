@@ -1,5 +1,5 @@
 
-StepGraph
+stepGraph
 =========
 
 This package implements the stepwise Gaussian graphical model algorithm.
@@ -8,11 +8,11 @@ This package implements the stepwise Gaussian graphical model algorithm.
 
 ### Installation
 
-You can install the **development** version from [GitHub](https://github.com/AnthonyChristidis/StepGraph).
+You can install the **development** version from [GitHub](https://github.com/AnthonyChristidis/stepGraph).
 
 ``` r
 library(devtools)
-devtools::install_github("AnthonyChristidis/StepGraph")
+devtools::install_github("AnthonyChristidis/stepGraph")
 ```
 
 ### License

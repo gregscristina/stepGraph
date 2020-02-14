@@ -1,7 +1,7 @@
 #'
 #' @title Cross-Validation for Stepwise Gaussian Graphical Model
 #'
-#' @description \code{cv.StepGraph} implements the cross-valiation procedure for the stepwise gaussian graphical algorithm.
+#' @description \code{cv.stepGraph} implements the cross-valiation procedure for the stepwise gaussian graphical algorithm.
 #'
 #' @param x Data matrix (of size n x p).
 #' @param fold Number of folds for the cross-validation procedure.
@@ -17,7 +17,7 @@
 #' @author Anthony-Alexander Christidis, \email{anthony.christidis@stat.ubc.ca}
 #'
 #'
-cv.StepGraph = function(x, fold, alpha_f_min, alpha_f_max, n_alpha, nei.max){
+cv.stepGraph = function(x, fold, alpha_f_min, alpha_f_max, n_alpha, nei.max){
 
   cv.part = function(n, k)
   { # Para que haga un in and out
@@ -60,7 +60,7 @@ cv.StepGraph = function(x, fold, alpha_f_min, alpha_f_max, n_alpha, nei.max){
   {
     x.train = x[part.list$trainMat[, k], ]
     varepsilonlist = lapply(1:nrow(alpha.grid),
-                            function(i) StepGraph(x.train,alpha.grid$f[i],alpha.grid$b[i],nei.max))
+                            function(i) stepGraph(x.train,alpha.grid$f[i],alpha.grid$b[i],nei.max))
     x.test = scale(x[part.list$testMat[, k], ])
     for (i in 1:nrow(alpha.grid)){
       if (length(varepsilonlist[[i]])==1){loss.re[i, k] = NA}
