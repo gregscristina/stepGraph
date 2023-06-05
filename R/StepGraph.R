@@ -6,24 +6,54 @@
 #'
 #' @description \code{stepGraph} computes the output for the stepwise gaussian graphical algorithm.
 #'
-#' @param x Data matrix (of size n x p).
-#' @param alpha_f Forward threshold.
-#' @param alpha_b Backward threshold.
-#' @param nei.max Maximum number of variables in every neighborhood.
+#' @param x Data matrix (of size n x p). ---------------------------------A)
+#' @param alpha_f Forward threshold.  ------------------------------------B)
+#' @param alpha_b Backward threshold. ------------------------------------C)
+#' @param nei.max Maximum number of variables in every neighborhood. -----D)
+#' 
+#' 
+#' 
+#' =================================================================================================================================================
+#' =====================================================================MEUS COMENTARIOS ===========================================================
+#' A) matriz de dados
+#' DUVIDA ---------B)limiar para o passo de adição - Ele representa um limite para a estatística de teste que determina se uma variável deve ser adicionada ao conjunto de variáveis selecionadas.
+#' DUVIDA----------C)limiar para o passo de remoção - Ele representa um limite para a estatística de teste que determina se uma variável deve ser removida do conjunto de variáveis selecionadas.
+#' D)(número máximo de variáveis em cada vizinhança)- Esse comentário indica que o parâmetro nei.max define o número máximo de variáveis permitidas em cada vizinhança.
+#'    Uma vizinhança é um conjunto de variáveis que são consideradas juntas em um determinado estágio do algoritmo. 
+#'    Esse parâmetro controla a complexidade do modelo resultante, limitando o número máximo de variáveis nas vizinhanças.
+#' =================================================================================================================================================
+#' ==================================================================================================================================================
+#' 
+#' 
 #'
-#' @return A list with the values: \cr \cr
-#' \code{Edges_A}: Estimated set of edges, \cr \cr
-#' \code{Omega}: Estimated precision matrix, \cr \cr
-#' \code{Adj_mat}: A (p x p) zero diagonal matrix. The non-zero off-diagonal elements
+#' @return A list with the values: \cr \cr-------------------------------------------------------E)
+#' \code{Edges_A}: Estimated set of edges, \cr \cr-----------------------------------------------F)
+#' \code{Omega}: Estimated precision matrix, \cr \cr---------------------------------------------G)
+#' \code{Adj_mat}: A (p x p) zero diagonal matrix. The non-zero off-diagonal elements------------H)
 #' corresponds with the order in which the ordered pair (i,j) is selected in the
 #' forward step, and \cr \cr
-#' \code{k_stop}:  Final step in the iteration.
-#'
+#' \code{k_stop}:  Final step in the iteration.--------------------------------------------------I)
 #' @export
-#'
 #' @author Anthony-Alexander Christidis, \email{anthony.christidis@stat.ubc.ca}
+#' 
+#' ===================================================================================================================================================
+#'=======================================MEUS COMENTARIOS ===========================================================================================
+#' E)Essa linha indica que a função retorna uma lista com os seguintes valores.
+#' F)Essa linha descreve que Edges_A é o conjunto estimado de arestas (conexões) entre as variáveis.
+#' G) descreve que Omega é a matriz de precisão estimada.
+#'    A matriz de precisão é a matriz inversa da matriz de covariância e é usada para descrever as relações entre as variáveis em um modelo gráfico.
+#' H)Essa linha descreve que Adj_mat é uma matriz de dimensões (p x p) com elementos diagonais zero. 
+#'    Os elementos fora da diagonal não nula correspondem à ordem em que o par ordenado (i, j) é selecionado no passo de adição.
+#' I) Essa linha descreve que k_stop representa o último passo na iteração do algoritmo.
+#'===================================================================================================================================================
+#'====================================================================================================================================================
 #'
-#'
+#' 
+
+
+
+
+
 stepGraph = function(x, alpha_f, alpha_b, nei.max){
 
   #Initialization
